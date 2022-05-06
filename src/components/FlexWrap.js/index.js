@@ -1,5 +1,6 @@
-import { useState  } from 'react';
+import { useState } from 'react';
 import './style.css';
+import RightArrow from '../../assets/right.png'
 
 function FlexWrap() {
     const [classValue, setclassValue] = useState("flex-wrap")
@@ -7,11 +8,11 @@ function FlexWrap() {
     const classNames = {
         "flex-nowrap": "nowrap",
         "flex-wrap-reverse": "wrap-reverse",
-        "flex-wrap":  "wrap"
+        "flex-wrap": "wrap"
     }
     return (
         <div className="test">
-            <h1 className='font-bold text-xl'>
+            <h1 className='font-bold text-3xl'>
                 Flex Wrap
             </h1>
             <div className='pt-5'>
@@ -46,35 +47,38 @@ function FlexWrap() {
                 </div>
             </div>
             <div className='my-3'>
-                <div className='link text-sm underline my-1' onClick={()=>setshowCode(!showCode)}>
-                    {
-                        showCode? "Hide code": "Show code"
-                    }
+                <div className='link text-sm underline my-1 flex items-center' onClick={() => setshowCode(!showCode)}>
+                    <div className='font-semibold'>
+                        {
+                            showCode ? "Hide code" : "Show code"
+                        }
+                    </div>
+                    <img src={RightArrow} className='h-3' />
                 </div>
-                { showCode &&
-                <code className='rounded-sm p-6 text-gray-50 font-semibold block'>
-                    <p>{`.parent{`}</p>
-                    <p className='pl-5'>{`display:flex;`}</p>
-                    <p className='pl-5'>{`flex-wrap: ${classNames[classValue]};`}</p>
-                    <p className='pl-5'>{`gap:10px;`}</p>
-                    <p>{`}`}</p>
-                </code>
+                {showCode &&
+                    <code className='rounded-sm p-6 text-gray-400 font-semibold block'>
+                        <p>{`.parent{`}</p>
+                        <p className='pl-5'>{`display:flex;`}</p>
+                        <p className='pl-5 text-white'>{`flex-wrap: ${classNames[classValue]};`}</p>
+                        <p className='pl-5'>{`gap:10px;`}</p>
+                        <p>{`}`}</p>
+                    </code>
                 }
             </div>
             <div className='py-5 flex flex-col gap-4'>
                 <div className='flex justify-items-stretch gap-3 w-full'>
-                    <button className='bg-red-200 flex-1 p-5'
-                    onClick={()=>setclassValue("flex-nowrap")}>
+                    <button className={`flex-1 p-5 border ${classValue === "flex-nowrap" ? "border-1 border-black" : ""}`}
+                        onClick={() => setclassValue("flex-nowrap")}>
                         nowrap
                     </button>
-                    <button className='bg-red-200 flex-1 p-5'
-                    onClick={()=>setclassValue("flex-wrap-reverse")}>
+                    <button className={`flex-1 p-5 border ${classValue === "flex-wrap-reverse" ? "border-1 border-black" : ""}`}
+                        onClick={() => setclassValue("flex-wrap-reverse")}>
                         wrap-reverse
                     </button>
                 </div>
                 <div className='flex justify-items-stretch gap-3 w-full'>
-                    <button className='bg-red-200 flex-1 p-5'
-                    onClick={()=>setclassValue("flex-wrap")}>
+                    <button className={`flex-1 p-5 border ${classValue === "flex-wrap" ? "border-1 border-black" : ""}`}
+                        onClick={() => setclassValue("flex-wrap")}>
                         wrap
                     </button>
                 </div>
