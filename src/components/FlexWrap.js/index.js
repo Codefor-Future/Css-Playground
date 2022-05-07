@@ -19,10 +19,13 @@ function FlexWrap() {
                 Flex Wrap
             </h1>
             <div className='pt-8'>
-                <h6 className='text-xs text-white font-semibold'>Parent</h6>
-                <div className={`parent rounded-md p-6 flex gap-4 mt-1 ${classValue}`}>
+                {/* <h6 className='text-xs text-white font-semibold'>Parent</h6> */}
+                <div className={`parent relative rounded-md p-6 flex gap-4 mt-1 ${classValue}`}>
+                <div className='absolute top-0 left-0 p-4'>
+                        <h6 className='text-xs text-white font-bold'>Parent</h6>
+                    </div>
                     {/* Child */}
-                    <div className='child w-28 h-28 rounded-xl flex flex-col justify-center items-center'>
+                    <div className='child w-28 h-28 rounded-xl flex flex-col justify-around items-center'>
                         <div className='text-xs text-gray-100'>
                             Child
                         </div>

@@ -35,7 +35,7 @@ function FlexWrap() {
                 Box Shadow
             </h1>
             <div className='pt-8'>
-                <div className={`parent overflow-hidden relative rounded-md p-6 flex justify-center items-center gap-4 mt-1 ${classValue}`}>
+                <div className={`parent overflow-hidden relative rounded-md p-6 flex justify-around items-center gap-4 mt-1 ${classValue}`}>
                     <div className='absolute top-0 left-0 p-4'>
                         <h6 className='text-xs text-white font-bold'>Parent</h6>
                     </div>

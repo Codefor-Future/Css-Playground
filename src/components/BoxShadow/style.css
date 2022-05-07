@@ -5,8 +5,8 @@ h6{
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.116);
 }
 .parent{
-    height: 200px;
     background-color: rgba(222, 238, 250, 0.31);
+    transition: 1s;
 }
 .child{
     /* background-color: #690606; */
