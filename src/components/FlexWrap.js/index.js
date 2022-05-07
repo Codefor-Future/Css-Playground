@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './style.css';
 import RightArrow from '../../assets/right.png'
 
@@ -10,6 +10,7 @@ function FlexWrap() {
         "flex-wrap-reverse": "wrap-reverse",
         "flex-wrap": "wrap"
     }
+    
     return (
         <div className="container">
             <h3 className='text-xs font-semibold text-white'>
@@ -52,26 +53,7 @@ function FlexWrap() {
                     </div>
                 </div>
             </div>
-            <div className='my-3'>
-                <div className='link text-sm underline text-white my-1 flex items-center' onClick={() => setshowCode(!showCode)}>
-                    <div className='font-semibold pl-1'>
-                        {
-                            showCode ? "Hide code" : "Show code"
-                        }
-                    </div>
-                    <img src={RightArrow} className='h-3' />
-                </div>
-                {showCode &&
-                    <code className='rounded-md p-6 mt-5 text-gray-50 font-semibold block'>
-                        <p>{`.parent{`}</p>
-                        <p className='pl-5'>{`display:flex;`}</p>
-                        <p className='pl-5 enhance-green'>{`flex-wrap: ${classNames[classValue]};`}</p>
-                        <p className='pl-5'>{`gap:10px;`}</p>
-                        <p>{`}`}</p>
-                    </code>
-                }
-            </div>
-            <div className='py-5 px-4 flex flex-col gap-4'>
+            <div className='py-9 px-4 flex flex-col gap-4'>
                 <div className='flex justify-items-stretch gap-3 w-full'>
                     <button className={`flex-1 p-3 border ${classValue === "flex-nowrap" ? "bg-white text-gray-800" : ""}`}
                         onClick={() => setclassValue("flex-nowrap")}>
@@ -88,6 +70,25 @@ function FlexWrap() {
                         wrap
                     </button>
                 </div>
+            </div>
+            <div className='my-0'>
+                <div className='link text-sm underline text-white my-1 flex items-center' onClick={() => setshowCode(!showCode)}>
+                    <div className='font-semibold pl-1'>
+                        {
+                            showCode ? "Hide code" : "Show code"
+                        }
+                    </div>
+                    <img src={RightArrow} className='h-3' />
+                </div>
+                {showCode &&
+                    <code className='rounded-md p-6 mt-3 non     text-gray-50 font-semibold block'>
+                        <p>{`.parent{`}</p>
+                        <p className='pl-5'>{`display:flex;`}</p>
+                        <p className='pl-5 enhance-green'>{`flex-wrap: ${classNames[classValue]};`}</p>
+                        <p className='pl-5'>{`gap:10px;`}</p>
+                        <p>{`}`}</p>
+                    </code>
+                }
             </div>
         </div>
     );

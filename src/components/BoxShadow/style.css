@@ -19,6 +19,7 @@ h6{
 }
 code{
     background: linear-gradient(#092A35, #05141a);
+    transition: 1s;
 }
 .enhance-green{
     color: rgba(53, 214, 155, 0.91);

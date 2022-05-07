@@ -1,4 +1,18 @@
 .App{
-    background: linear-gradient(rgba(53, 214, 155, 0.91), black 35%);
-    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    transition: all .5s;
+    background: linear-gradient(#00918f00, black 40%);
+    background-color: #00918E ;
+}
+.bg-blue{
+    background: linear-gradient(#00918E, black 40%);
+    transition: all .5s;
+}
+.bg-green{
+    background: linear-gradient(rgba(53, 214, 155, 0.91), black 40%);
 }

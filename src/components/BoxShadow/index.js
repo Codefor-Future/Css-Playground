@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './style.css';
 import RightArrow from '../../assets/right.png'
 
@@ -62,27 +62,6 @@ function FlexWrap() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='my-3'>
-                <div className='link text-sm underline text-white my-1 flex items-center' onClick={() => setshowCode(!showCode)}>
-                    <div className='font-semibold pl-1'>
-                        {
-                            showCode ? "Hide code" : "Show code"
-                        }
-                    </div>
-                    <img src={RightArrow} className='h-3' alt='' />
-                </div>
-                {showCode &&
-                    <code className='rounded-md p-6 mt-5 text-gray-50 font-semibold block'>
-                        <p>{`.child{`}</p>
-                        <p className='pl-5'>{`box-shadow: `}</p>
-                        <p className='pl-10 enhance-green'>{`${inset?"inset":""}`}</p>
-                        <p className='pl-10 enhance-green'>{`${offsetX}px ${offsetY}px`}</p>
-                        <p className='pl-10 enhance-green'>{`${blur}px ${radius}px`}</p>
-                        <p className='pl-10 enhance-green'>{`${color} ;`}</p>
-                        <p>{`}`}</p>
-                    </code>
-                }
             </div>
             <div className='py-5 flex flex-col gap-4'>
                 <div>
@@ -202,6 +181,38 @@ function FlexWrap() {
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div className='my-0'>
+                <div className='link text-sm underline text-white my-1 flex items-center' onClick={() => setshowCode(!showCode)}>
+                    <div className='font-semibold pl-1'>
+                        {
+                            showCode ? "Hide code" : "Show code"
+                        }
+                    </div>
+                    <img src={RightArrow} className='h-3' alt='' />
+                </div>
+                {showCode &&
+                    <code className='rounded-md p-6 mt-3 text-gray-50 font-semibold block'>
+                        <p>{`.child{`}</p>
+                        <p className='pl-5'>{`box-shadow: `}</p>
+                        <p className='pl-10 enhance-green'>
+                            {`${inset?"inset":""}`}
+                        </p>
+                        <p className='pl-10 enhance-green'>
+                            {`${offsetX}px ${offsetY}px`}
+                            <span className='text-gray-500 text-xs font-light block'> //&nbsp;X,Y&nbsp;offsets</span>
+                        </p>
+                        <p className='pl-10 enhance-green'>
+                            {`${blur}px ${radius}px`}
+                            <span className='text-gray-500 text-xs font-light block'> //&nbsp;Blur&nbsp;radius,&nbsp;Spread&nbsp;radius</span>
+                        </p>
+                        <p className='pl-10 enhance-green'>
+                            {`${color} ;`}
+                            <span className='text-gray-500 text-xs font-light block'> //&nbsp;Color</span>
+                        </p>
+                        <p>{`}`}</p>
+                    </code>
+                }
             </div>
         </div>
     );

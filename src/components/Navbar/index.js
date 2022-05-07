@@ -23,7 +23,7 @@ export default function FlexWrap() {
                         <Link to="/box-shadow">Box shadow</Link>
                     </li>
                     <li>
-                        <Link to="/users">Users</Link>
+                        <Link to="/">Home</Link>
                     </li>
                 </ul>
             </nav>
