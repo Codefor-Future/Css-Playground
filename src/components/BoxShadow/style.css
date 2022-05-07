@@ -1,0 +1,85 @@
+h1{
+    color: #444444;
+}
+h6{
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.116);
+}
+.parent{
+    height: 200px;
+    background-color: rgba(222, 238, 250, 0.31);
+}
+.child{
+    /* background-color: #690606; */
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.11); */
+    background: linear-gradient(150deg,#C6DE41,rgba(121, 141, 8, 1));
+    /* box-shadow: inset 2px 0px 6px #ffffff4b; */
+}
+.link{
+    transition: 1s;
+}
+code{
+    background: linear-gradient(#092A35, #05141a);
+}
+.enhance-green{
+    color: rgba(53, 214, 155, 0.91);
+}
+button{
+    border-radius: 200px;
+    font-weight: 600;
+    color: white;
+    transition: all 1s;
+    border: 1px solid white;
+}
+/* sliders */
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+        /* background: linear-gradient(to right, rgba(32, 147, 105, 0.91) 0%, rgba(32, 147, 105, 0.91) 50%, #fff 50%, #fff 100%); */
+        border-radius: 8px;
+        height: 1px;
+        width: 100%;
+        outline: none;
+        transition: background 450ms ease-in;
+        -webkit-appearance: none;
+    }
+    input[type='range']::-webkit-slider-thumb {
+      width: 13px;
+      -webkit-appearance: none;
+      height: 13px;
+      cursor: ew-resize;
+      background-color: white;
+      border-radius: 50%;
+    } 
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: rgba(32, 147, 105, 0.91); 
+}
+input[type="range"]::-moz-range-track {  
+  background-color: white;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: rgba(32, 147, 105, 0.91); 
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color: white;
+}
+/* /sliders */
+input[type='checkbox'] {
+    /* background: linear-gradient(to right, rgba(32, 147, 105, 0.91) 0%, rgba(32, 147, 105, 0.91) 50%, #fff 50%, #fff 100%); */
+    border-radius: 5px;
+    outline: none;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    transition: all 450ms ease-in;
+    -webkit-appearance: none;
+    accent-color:rgba(32, 147, 105, 0.91) ;
+}
+input[type='checkbox']:checked {
+    background-color: rgba(32, 147, 105, 0.91);
+}
+td{
+    padding: 10px 0;
+}

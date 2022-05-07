@@ -11,15 +11,18 @@ function FlexWrap() {
         "flex-wrap": "wrap"
     }
     return (
-        <div className="test">
-            <h1 className='font-bold text-3xl'>
+        <div className="container">
+            <h3 className='text-xs font-semibold text-white'>
+                FLEX BOX
+            </h3>
+            <h1 className='text-4xl font-black text-white'>
                 Flex Wrap
             </h1>
-            <div className='pt-5'>
-                <h6 className='text-xs'>Parent</h6>
-                <div className={`parent rounded p-3 flex gap-4 ${classValue}`}>
+            <div className='pt-8'>
+                <h6 className='text-xs text-white font-semibold'>Parent</h6>
+                <div className={`parent rounded-md p-6 flex gap-4 mt-1 ${classValue}`}>
                     {/* Child */}
-                    <div className='child w-32 h-32 rounded-xl flex flex-col justify-center items-center'>
+                    <div className='child w-28 h-28 rounded-xl flex flex-col justify-center items-center'>
                         <div className='text-xs text-gray-100'>
                             Child
                         </div>
@@ -28,7 +31,7 @@ function FlexWrap() {
                         </div>
                     </div>
                     {/* /Child  */}
-                    <div className='child w-32 h-32 rounded-xl flex flex-col justify-center items-center'>
+                    <div className='child w-28 h-28 rounded-xl flex flex-col justify-center items-center'>
                         <div className='text-xs text-gray-100'>
                             Child
                         </div>
@@ -36,7 +39,7 @@ function FlexWrap() {
                             2
                         </div>
                     </div>
-                    <div className='child w-32 h-32 rounded-xl flex flex-col justify-center items-center'>
+                    <div className='child w-28 h-28 rounded-xl flex flex-col justify-center items-center'>
                         <div className='text-xs text-gray-100'>
                             Child
                         </div>
@@ -47,8 +50,8 @@ function FlexWrap() {
                 </div>
             </div>
             <div className='my-3'>
-                <div className='link text-sm underline my-1 flex items-center' onClick={() => setshowCode(!showCode)}>
-                    <div className='font-semibold'>
+                <div className='link text-sm underline text-white my-1 flex items-center' onClick={() => setshowCode(!showCode)}>
+                    <div className='font-semibold pl-1'>
                         {
                             showCode ? "Hide code" : "Show code"
                         }
@@ -56,28 +59,28 @@ function FlexWrap() {
                     <img src={RightArrow} className='h-3' />
                 </div>
                 {showCode &&
-                    <code className='rounded-sm p-6 text-gray-400 font-semibold block'>
+                    <code className='rounded-md p-6 mt-5 text-gray-50 font-semibold block'>
                         <p>{`.parent{`}</p>
                         <p className='pl-5'>{`display:flex;`}</p>
-                        <p className='pl-5 text-white'>{`flex-wrap: ${classNames[classValue]};`}</p>
+                        <p className='pl-5 enhance-green'>{`flex-wrap: ${classNames[classValue]};`}</p>
                         <p className='pl-5'>{`gap:10px;`}</p>
                         <p>{`}`}</p>
                     </code>
                 }
             </div>
-            <div className='py-5 flex flex-col gap-4'>
+            <div className='py-5 px-4 flex flex-col gap-4'>
                 <div className='flex justify-items-stretch gap-3 w-full'>
-                    <button className={`flex-1 p-5 border ${classValue === "flex-nowrap" ? "border-1 border-black" : ""}`}
+                    <button className={`flex-1 p-3 border ${classValue === "flex-nowrap" ? "bg-white text-gray-800" : ""}`}
                         onClick={() => setclassValue("flex-nowrap")}>
                         nowrap
                     </button>
-                    <button className={`flex-1 p-5 border ${classValue === "flex-wrap-reverse" ? "border-1 border-black" : ""}`}
+                    <button className={`flex-1 p-3 border ${classValue === "flex-wrap-reverse" ? "bg-white text-gray-800" : ""}`}
                         onClick={() => setclassValue("flex-wrap-reverse")}>
                         wrap-reverse
                     </button>
                 </div>
                 <div className='flex justify-items-stretch gap-3 w-full'>
-                    <button className={`flex-1 p-5 border ${classValue === "flex-wrap" ? "border-1 border-black" : ""}`}
+                    <button className={`flex-1 p-3 border ${classValue === "flex-wrap" ? "bg-white text-gray-800" : ""}`}
                         onClick={() => setclassValue("flex-wrap")}>
                         wrap
                     </button>
